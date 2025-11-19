@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="report_tamu" pageWidth="595" pageHeight="842" columnWidth="555"
+    leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+
+    <!-- QUERY -->
+    <queryString language="SQL">
+        <![CDATA[
+            SELECT nik, nama_tamu, lama_menginap, id_kamar FROM tamu ORDER BY nik
+        ]]>
+    </queryString>
+
+    <!-- FIELDS -->
+    <field name="nik" class="java.lang.String"/>
+    <field name="nama_tamu" class="java.lang.String"/>
+    <field name="lama_menginap" class="java.lang.String"/>
+    <field name="id_kamar" class="java.lang.String"/>
+
+    <!-- TITLE -->
+    <title>
+        <band height="80">
+            <staticText>
+                <reportElement x="136" y="10" width="317" height="30"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA[DAFTAR TAMU DOHO HOMESTAY]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="181" y="40" width="220" height="16"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA[Jl. Doho no.8, Jember, Jawa Timur, 68122]]></text>
+            </staticText>
+
+            <image>
+                <reportElement x="10" y="0" width="96" height="80"/>
+                <imageExpression><![CDATA["G:\\image.png"]]></imageExpression>
+            </image>
+
+        </band>
+    </title>
+
+    <pageHeader>
+        <band height="8"/>
+    </pageHeader>
+
+    <!-- COLUMN HEADER -->
+    <columnHeader>
+        <band height="30">
+
+            <!-- NIK -->
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="5" width="120" height="20" backcolor="#E0F7FA"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[NIK]]></text>
+            </staticText>
+
+            <!-- NAMA TAMU -->
+            <staticText>
+                <reportElement mode="Opaque" x="120" y="5" width="220" height="20" backcolor="#E0F7FA"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <paragraph leftIndent="5"/>
+                </textElement>
+                <text><![CDATA[Nama Tamu]]></text>
+            </staticText>
+
+            <!-- LAMA -->
+            <staticText>
+                <reportElement mode="Opaque" x="340" y="5" width="80" height="20" backcolor="#E0F7FA"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[Lama]]></text>
+            </staticText>
+
+            <!-- KAMAR -->
+            <staticText>
+                <reportElement mode="Opaque" x="420" y="5" width="135" height="20" backcolor="#E0F7FA"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[Kamar Dipesan]]></text>
+            </staticText>
+
+        </band>
+    </columnHeader>
+
+    <!-- DETAIL -->
+    <detail>
+        <band height="20">
+
+            <!-- NIK -->
+            <textField>
+                <reportElement x="0" y="0" width="120" height="20"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{nik}]]></textFieldExpression>
+            </textField>
+
+            <!-- NAMA TAMU -->
+            <textField>
+                <reportElement x="120" y="0" width="220" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <paragraph leftIndent="5"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nama_tamu}]]></textFieldExpression>
+            </textField>
+
+            <!-- LAMA -->
+            <textField>
+                <reportElement x="340" y="0" width="80" height="20"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{lama_menginap}]]></textFieldExpression>
+            </textField>
+
+            <!-- KAMAR -->
+            <textField>
+                <reportElement x="420" y="0" width="135" height="20"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{id_kamar}]]></textFieldExpression>
+            </textField>
+
+        </band>
+    </detail>
+
+    <columnFooter><band height="10"/></columnFooter>
+    <pageFooter><band height="20"/></pageFooter>
+    <summary><band height="20"/></summary>
+
+</jasperReport>

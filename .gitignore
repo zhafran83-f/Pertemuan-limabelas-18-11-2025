@@ -1,0 +1,19 @@
+# NetBeans build / output
+build/
+dist/
+nbproject/private/
+
+# compiled class files
+*.class
+
+# IDE/editor
+*.log
+*.user
+*.swp
+
+# libraries (optional - jika kamu ingin commit jar di lib/, jangan uncomment)
+# lib/
+
+# OS files
+.DS_Store
+Thumbs.db
