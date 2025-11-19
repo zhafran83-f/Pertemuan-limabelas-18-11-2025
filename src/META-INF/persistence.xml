@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+  <persistence-unit name="Pertemuan_15PU" transaction-type="RESOURCE_LOCAL">
+    <!-- gunakan Hibernate sebagai provider -->
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+    <!-- daftar entity (boleh tetap) -->
+    <class>pertemuan_15.Tamu</class>
+    <class>pertemuan_15.VKamarTerpesan</class>
+    <class>pertemuan_15.Login_1</class>
+    <class>pertemuan_15.Kamar</class>
+    <class>pertemuan_15.KamarTerpesan</class>
+
+    <properties>
+      <!-- koneksi JDBC (sesuaikan jika perlu) -->
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/PBO_Pertemuan15"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.password" value="ZayZiya03"/>
+
+      <!-- properti Hibernate -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL10Dialect"/>
+      <!-- jangan pakai 'create' pada hbm2ddl.auto kalau DB sudah ada; gunakan 'validate' atau hapus -->
+      <property name="hibernate.hbm2ddl.auto" value="validate"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>

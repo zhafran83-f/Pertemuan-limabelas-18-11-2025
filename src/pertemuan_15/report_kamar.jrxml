@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_kamar" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="11a61c5d-6c55-44b2-9dd5-abaa101d77ee">
+	<property name="ireport.zoom" value="1.0000000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT id_kamar, nomor_kamar, tipe_kamar, fasilitas FROM kamar]]>
+	</queryString>
+	<field name="id_kamar" class="java.lang.String"/>
+	<field name="nomor_kamar" class="java.lang.String"/>
+	<field name="tipe_kamar" class="java.lang.String"/>
+	<field name="fasilitas" class="java.lang.String"/>
+	<title>
+		<band height="80">
+			<staticText>
+				<reportElement x="150" y="10" width="350" height="30" uuid="1410f1c2-a1cb-438e-9c2a-f6db85e6cc1d"/>
+				<textElement>
+					<font fontName="Cambria" size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DETAIL KAMAR DOHO HOMESTAY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="196" y="40" width="252" height="20" uuid="51f68836-6c2d-4ecd-84ec-8709d1b3aa36"/>
+				<textElement>
+					<font fontName="Cambria" size="14"/>
+				</textElement>
+				<text><![CDATA[Jl. Doho no.8, Jember, Jawa Timur, 68122]]></text>
+			</staticText>
+			<image>
+				<reportElement x="13" y="0" width="402" height="80" uuid="af5367f1-d77d-481a-abe4-381eee3b9ab3"/>
+				<imageExpression><![CDATA["G:\\image.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="10" width="120" height="20" forecolor="#000000" backcolor="#E0F7FA" uuid="d67b1de2-477f-44b2-b887-212a8030b8d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID Kamar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="10" width="120" height="20" forecolor="#000000" backcolor="#E0F7FA" uuid="5087e700-11f2-4cc4-ab33-0cd8eb4dc709"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Kamar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="240" y="10" width="120" height="20" forecolor="#000000" backcolor="#E0F7FA" uuid="6573171f-6c64-442a-949b-6637d8d64c67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipe Kamar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="360" y="10" width="140" height="20" forecolor="#000000" backcolor="#E0F7FA" uuid="7add1918-d3c9-4346-b965-d3a6ed0dbcd3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fasilitas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement x="0" y="0" width="120" height="20" uuid="a268d005-63c7-4c57-b45e-7483f3b1f890"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id_kamar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="120" height="20" uuid="a2b165dc-a479-4111-9373-5dc435cad605"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomor_kamar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="120" height="20" uuid="9a9b44be-92d2-44ec-9390-d715d7f03304"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipe_kamar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="140" height="20" uuid="12a35a65-da8c-4ce0-b03c-41432a5cad77"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fasilitas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20"/>
+	</pageFooter>
+	<summary>
+		<band height="20"/>
+	</summary>
+</jasperReport>
